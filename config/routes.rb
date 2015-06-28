@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :schools
   root "home#index"
 
+  get "/teacher" => "teachers#index"
+  get "/school" => "schools#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
