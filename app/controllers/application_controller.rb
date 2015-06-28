@@ -5,9 +5,6 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     if resource.is_a?(School)
-      puts "$" * 40
-      puts params
-      puts "$" * 40
       school_path
     elsif resource.is_a?(Teacher)
       teacher_path
