@@ -2,6 +2,7 @@ class NotificationsController < ApplicationController
   def incoming
     @phone_number = params[:From]
     @body = params[:Body]
+    @teacher = Teacher.find_by(phone_number: @phone_number)
 
     output = process_message(@body)
     respond(output)
@@ -11,14 +12,18 @@ class NotificationsController < ApplicationController
 
   private
 
-  def process_message(message)
+  def process_message(message, teacher)
       if message.downcase == 'yes'
-        # Find the offer here. Change available to true
-        output = "Great, we will let them know that you're available"
+        offer = Offer.where("teacher_id == ? AND available == ?", @teacher.id, false)
+        request = Request.find(offer.request_id)
+        output = "Great. The position pays #{request.payment.to_s} dollars and is for the hours #{request.start_time} to #{request.end_time}.\n Please reply confirm to lock this job."
+        offer.update!(available: true)
       elsif message.downcase == 'confirm'
         # find offer, change confirmed to true.
         # Find request set to filled
         output = "Great, you're all set!"
+      else
+        output = "We're sorry, there's been an error. Please check your reply and try again."
       end
       output
     end
