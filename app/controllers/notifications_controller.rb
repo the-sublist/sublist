@@ -3,7 +3,7 @@ class NotificationsController < ApplicationController
     @phone_number = params[:From]
     @body = params[:Body]
 
-    request_id = @body.gsub(/[^0-9]/, ""))
+    request_id = @body.gsub(/[^0-9]/, "")
     answer = @body.gsub(/[^A-z]/, "")
 
     @request = Request.find(request_id)
