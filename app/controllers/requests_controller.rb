@@ -9,11 +9,8 @@ class RequestsController < ApplicationController
     @request = Request.new(request_params)
 
     if @request.save
-      @teachers = Teacher.where("min_grade <= ? AND max_grade >= ?", request_params[:grade], request_params[:grade])
-
-      # teachers.each do |t|
-      #   CreateOfferService.new(t, @request).call
-      # end
+      teachers = Teacher.where("min_grade <= ? AND max_grade >= ?", request_params[:grade], request_params[:grade])
+      OfferService.new(teachers, @request, current_school).call
       redirect_to school_path(current_school)
     end
   end
