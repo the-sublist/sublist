@@ -3,7 +3,7 @@ class NotificationsController < ApplicationController
     @phone_number = params[:From]
     @body = params[:Body]
 
-    # output = process_message("WOOOO", )
+    output = process_message(@body)
     respond(output)
   end
 
@@ -11,7 +11,7 @@ class NotificationsController < ApplicationController
 
   private
 
-  def process_message(message, subscriber)
+  def process_message(message)
       if message.downcase == 'yes'
         # Find the offer here. Change available to true
         output = "Great, we will let them know that you're available"
