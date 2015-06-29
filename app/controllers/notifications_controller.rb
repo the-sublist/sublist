@@ -14,10 +14,10 @@ class NotificationsController < ApplicationController
 
   def process_message(message)
       if message.downcase == 'yes'
-        offer = Offer.where("teacher_id == ? AND available == ?", @teacher.id, false)
+        offer = Offer.where("teacher_id: ? AND available: ?", @teacher.id, false)
         request = Request.find(offer.request_id)
-        output = "Great. The position pays #{request.payment.to_s} dollars and is for the hours #{request.start_time} to #{request.end_time}.\n Please reply confirm to lock this job."
         offer.update!(available: true)
+        output = "Great. The position pays #{request.payment.to_s} dollars and is for the hours #{request.start_time} to #{request.end_time}.\n Please reply confirm to lock this job."
       elsif message.downcase == 'confirm'
         # find offer, change confirmed to true.
         # Find request set to filled
