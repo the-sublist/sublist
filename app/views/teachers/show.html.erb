@@ -1,0 +1,36 @@
+<h4>Your Profile</h4>
+
+<table class="table">
+  <tr>
+    <td>Name:</td>
+    <td><%= "#{@teacher.first_name} #{@teacher.last_name}" %></td>
+  </tr>
+  <tr>
+    <td>Phone:</td>
+    <td><%= @teacher.phone_number %></td>
+  </tr>
+  <tr>
+    <td>Age:</td>
+    <td><%= @teacher.age %></td>
+  </tr>
+  <tr>
+    <td>Gender:</td>
+    <td><%= @teacher.gender %></td>
+  </tr>
+  <tr>
+    <td>Education:</td>
+    <td><%= @teacher.credentials %></td>
+  </tr>
+  <tr>
+    <td>Min Grade:</td>
+    <td><%= @teacher.min_grade %></td>
+  </tr>
+  <tr>
+    <td>Max Grade:</td>
+    <td><%= @teacher.max_grade %></td>
+  </tr>
+
+</table>
+
+<%= link_to "Complete/edit profile", edit_teacher_path, class: "btn btn-info" %>
+<%= link_to "Delete profile", teacher_path(@teacher), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?"} %>

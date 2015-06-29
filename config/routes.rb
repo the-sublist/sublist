@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   devise_for :schools
   root "home#index"
 
-  get "/teacher" => "teachers#index"
+  # get "/teacher" => "teachers#index"
+  # get "teachers/:id/edit" => "teachers#edit"
+  resources :teachers
+
+
   get "/school" => "schools#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     if resource.is_a?(School)
       school_path
     elsif resource.is_a?(Teacher)
-      teacher_path
+      teacher_path(current_teacher)
     end
   end
 end
