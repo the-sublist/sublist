@@ -13,7 +13,7 @@ class SmsService
       body: "Hello, #{@teacher.full_name}.\n\n"\
       "#{@school.school_name} at #{@school.address} has an opening "\
       "to teach #{@request.format_grade} on #{@request.format_date}.\n\n"\
-      "This is request ##{@request.id}."\
+      "This is request ID:#{@request.id}. "\
       "Please respond 'yes #{@request.id}' to this text if you are available."
     )
   end
