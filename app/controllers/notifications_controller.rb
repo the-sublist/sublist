@@ -12,8 +12,13 @@ class NotificationsController < ApplicationController
   private
 
   def process_message(message, subscriber)
-      if message == 'yes'
+      if message.downcase == 'yes'
+        # Find the offer here. Change available to true
         output = "Great, we will let them know that you're available"
+      elsif message.downcase == 'confirm'
+        # find offer, change confirmed to true.
+        # Find request set to filled
+        output = "Great, you're all set!"
       end
       output
     end
