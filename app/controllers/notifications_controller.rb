@@ -16,12 +16,11 @@ class NotificationsController < ApplicationController
 
   def process_message(message)
       if message.downcase == 'yes'
+        @offer.make_available
         output =  "Great. The position pays #{@request.payment.to_s} "\
                   "dollars and is for the hours #{@request.start_time} "\
                   "to #{@request.end_time}.\n Please reply "\
                   "'confirm #{@request.id}' to lock this job."
-        @offer.update(available: true)
-        @offer.save
       elsif message.downcase == 'confirm'
         # find offer, change confirmed to true.
         # Find request set to filled
