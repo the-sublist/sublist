@@ -2,7 +2,7 @@ class NotificationsController < ApplicationController
   def incoming
     @phone_number = params[:From]
     @response = params[:Body].gsub(/[^A-z]/, "")
-    @request = Request.find(@body.gsub(/[^0-9]/, ""))
+    @request = Request.find(params[:Body].gsub(/[^0-9]/, ""))
     @teacher = Teacher.find_by(phone_number: @phone_number)
     @offer = Offer.where(teacher_id: @teacher.id, request_id: @request.id)
 
