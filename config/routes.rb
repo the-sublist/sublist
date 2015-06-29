@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   # get "/teacher" => "teachers#index"
   # get "teachers/:id/edit" => "teachers#edit"
   resources :teachers
+  resources :schools
 
-
-  get "/school" => "schools#index"
+  # get "/school" => "schools#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

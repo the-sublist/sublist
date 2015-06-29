@@ -1,0 +1,49 @@
+<h4>Your Profile</h4>
+
+<table class="table">
+  <tr>
+    <td>Name:</td>
+    <td><%= @school.school_name %></td>
+  </tr>
+  <tr>
+    <td>Phone:</td>
+    <td><%= @school.contact_phone %></td>
+  </tr>
+  <tr>
+    <td>Address:</td>
+    <td><%= @school.address %></td>
+  </tr>
+</table>
+
+<%= link_to "Complete/edit profile", edit_school_path, class: "btn btn-info" %>
+<%= link_to "Delete profile", school_path(@school), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?"} %>
+
+
+<h4>Recent Requests</h4>
+
+<table class="table">
+  <tr>
+    <td>Stuff:</td>
+    <td>MOARE INTERESTING STUFF</td>
+  </tr>
+  <tr>
+    <td>Stuff:</td>
+    <td>MOARE INTERESTING STUFF</td>
+  </tr>
+  <tr>
+    <td>Stuff:</td>
+    <td>MOARE INTERESTING STUFF</td>
+  </tr>
+  <tr>
+    <td>Stuff:</td>
+    <td>MOARE INTERESTING STUFF</td>
+  </tr>
+  <tr>
+    <td>Phone:</td>
+    <td><%= @school.contact_phone %></td>
+  </tr>
+  <tr>
+    <td>Address:</td>
+    <td><%= @school.address %></td>
+  </tr>
+</table>

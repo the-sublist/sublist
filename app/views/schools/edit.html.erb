@@ -1,0 +1,23 @@
+<%= form_for @school, html: {class: "form-horizontal"} do |f| %>
+
+  <div class="form-group">
+    <%= f.label "School Name", class: "col-sm-2" %>
+    <%= f.text_field :school_name, class: "col-sm-6" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Address", class: "col-sm-2" %>
+    <%= f.text_field :address, class: "col-sm-6" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Phone #", class: "col-sm-2" %>
+    <%= f.text_field :contact_phone, class: "col-sm-6", placeholder: "eg 415-555-5555" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit class: "btn btn-info col-sm-offset-1" %>
+    <%= link_to "Cancel", school_path(@school), class: "btn btn-default" %>
+  </div>
+
+<% end %>

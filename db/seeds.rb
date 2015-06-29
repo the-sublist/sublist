@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+# Create a school User
+School.create(
+            email: "school@test.com",
+            password: "12345678",
+            school_name: "Park Valley High School",
+            address: "968 Grosvenor Pl, Oakland, CA 94610",
+            contact_phone: "+15555555555"
+            )
