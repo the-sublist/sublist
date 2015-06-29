@@ -12,7 +12,7 @@ class NotificationsController < ApplicationController
 
   private
 
-  def process_message(message, teacher)
+  def process_message(message)
       if message.downcase == 'yes'
         offer = Offer.where("teacher_id == ? AND available == ?", @teacher.id, false)
         request = Request.find(offer.request_id)
