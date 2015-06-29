@@ -9,6 +9,7 @@ class SchoolsController < ApplicationController
   end
 
   def show
+    @requests = Request.where(user_id: current_school.id)
   end
 
   def update

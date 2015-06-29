@@ -1,0 +1,57 @@
+<h3>Request a sub</h3>
+<hr>
+  <%= form_for @request, html: {class: "form-horizontal"} do |f| %>
+
+    <%= f.hidden_field :school_id, :value => current_school.id %>
+
+    <div class="form-group">
+      <%= f.label "Request Name", class: "col-sm-3 control-label" %>
+      <div class="col-sm-5">
+        <%= f.text_field :request_name, value: "#{current_school.get_request_name}", class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "Date", class: "col-sm-3 control-label" %>
+      <div class="col-sm-3">
+        <%= f.date_field :date, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "Start Time", class: "col-sm-3 control-label" %>
+      <div class="col-sm-3">
+        <%= f.time_field :start_time, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "End Time", class: "col-sm-3 control-label" %>
+      <div class="col-sm-3">
+        <%= f.time_field :end_time, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "Pay", class: "col-sm-3 control-label" %>
+      <div class="col-sm-3">
+        <%= f.text_field :payment, :value => "$", class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label "Grade", class: "col-sm-3 control-label" %>
+      <div class="col-sm-3">
+        <%= f.select :grade, [ ["Kindergarten", 0], ["1st Grade", 1], ["2nd Grade", 2], ["3rd Grade", 3], ["4th Grade", 4], ["5th Grade", 5], ["6th Grade", 6], ["7th Grade", 7], ["8th Grade", 8], ["9th Grade", 9], ["10th Grade", 10], ["11th Grade", 11], ["12th Grade", 12] ], class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-3">
+      <%= f.submit class: "btn btn-primary" %>
+      <%= link_to "Cancel", root_path, class: "btn btn-danger" %>
+
+      </div>
+    </div>
+
+  <% end %>

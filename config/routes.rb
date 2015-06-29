@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # get "teachers/:id/edit" => "teachers#edit"
   resources :teachers
   resources :schools
+  resources :requests
 
   # get "/school" => "schools#index"
   # The priority is based upon order of creation: first created -> highest priority.

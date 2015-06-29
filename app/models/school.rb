@@ -5,4 +5,9 @@ class School < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :requests
+
+  def get_request_name
+    count = Request.where(school_id: self.id).count
+    "#{self.school_name}: Request ##{count + 1}"
+  end
 end
