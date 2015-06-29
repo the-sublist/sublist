@@ -1,12 +1,16 @@
 class NotificationsController < ApplicationController
   def incoming
     @phone_number = params[:From]
-    @response = params[:Body].gsub(/[^A-z]/, "")
-    @request = Request.find(params[:Body].gsub(/[^0-9]/, ""))
-    @teacher = Teacher.find_by(phone_number: @phone_number)
-    @offer = Offer.where(teacher_id: @teacher.id, request_id: @request.id)
+    @body = params[:Body]
 
-    output = process_message(@response)
+    request_id = @body.gsub(/[^0-9]/, ""))
+    answer = @body.gsub(/[^A-z]/, "")
+
+    @request = Request.find(request_id)
+    @teacher = Teacher.find_by(phone_number: @phone_number)
+    @offer = Offer.find_by_teacher_id_and_request_id(@teacher.id, @request.id)
+
+    output = process_message(answer)
     respond(output)
   end
 
