@@ -1,4 +1,10 @@
-<h4>Your Profile</h4>
+<h4>Your Profile
+  <div class="btn-group pull-right">
+    <%= link_to "Complete/edit profile", edit_school_path, class: "btn btn-info btn-sm" %>
+    <%= link_to "Delete profile", school_path(@school), method: :delete, class: "btn btn-danger btn-sm", data: { confirm: "Are you sure?"} %>
+  </div>
+
+</h4>
 
 <table class="table">
   <tr>
@@ -15,35 +21,25 @@
   </tr>
 </table>
 
-<%= link_to "Complete/edit profile", edit_school_path, class: "btn btn-info" %>
-<%= link_to "Delete profile", school_path(@school), method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?"} %>
-
 
 <h4>Recent Requests</h4>
 
 <table class="table">
-  <tr>
-    <td>Stuff:</td>
-    <td>MOARE INTERESTING STUFF</td>
-  </tr>
-  <tr>
-    <td>Stuff:</td>
-    <td>MOARE INTERESTING STUFF</td>
-  </tr>
-  <tr>
-    <td>Stuff:</td>
-    <td>MOARE INTERESTING STUFF</td>
-  </tr>
-  <tr>
-    <td>Stuff:</td>
-    <td>MOARE INTERESTING STUFF</td>
-  </tr>
-  <tr>
-    <td>Phone:</td>
-    <td><%= @school.contact_phone %></td>
-  </tr>
-  <tr>
-    <td>Address:</td>
-    <td><%= @school.address %></td>
-  </tr>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @requests.each do |request| %>
+      <tr>
+        <td><%= request.request_name %></td>
+        <td><%= request.format_date %></td>
+        <td><%= request.format_status %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>

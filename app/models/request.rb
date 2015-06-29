@@ -21,4 +21,12 @@ class Request < ActiveRecord::Base
   def format_date
     self.date.strftime("%A, %b %d")
   end
+
+  def format_status
+    if self.active == true
+      "Pending"
+    else
+      "Closed"
+    end
+  end
 end
