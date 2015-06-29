@@ -27,9 +27,14 @@ class NotificationsController < ApplicationController
                   "to #{@request.end_time}.\n Please reply "\
                   "'confirm #{@request.id}' to lock this job."
       elsif message.downcase == 'confirm'
-        # find offer, change confirmed to true.
-        # Find request set to filled
-        output = "You're all set, if you have any questions call (415) 555-5555."
+        if @offer.available == true
+          # find offer, change confirmed to true.
+          @offer.update_attribute(:confirmed, true)
+          @offer.save
+          # Find request set to filled
+          @request.update_attribute(:active, false)
+          output = "You're all set, if you have any questions call (415) 555-5555."
+        end
       else
         output = "We're sorry, there's been an error. Please check your reply and try again."
       end
