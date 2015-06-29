@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :requests
 
 
-  get '/messages' => 'twilio#incoming'
+  get '/messages' => 'notifications#incoming'
   # get "/school" => "schools#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
