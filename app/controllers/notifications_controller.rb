@@ -16,7 +16,8 @@ class NotificationsController < ApplicationController
 
   def process_message(message)
       if message.downcase == 'yes'
-        @offer.make_available
+        @offer.update_attribute(:available, true)
+        @offer.save
         output =  "Great. The position pays #{@request.payment.to_s} "\
                   "dollars and is for the hours #{@request.start_time} "\
                   "to #{@request.end_time}.\n Please reply "\
