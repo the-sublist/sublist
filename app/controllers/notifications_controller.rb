@@ -22,10 +22,7 @@ class NotificationsController < ApplicationController
       if message.downcase == 'yes'
         @offer.update_attribute(:available, true)
         @offer.save
-        output =  "Great. The position pays #{@request.payment.to_s} "\
-                  "dollars and is for the hours #{@request.start_time} "\
-                  "to #{@request.end_time}.\n Please reply "\
-                  "'confirm #{@request.id}' to lock this job."
+        output =  "Great. Sit tight, while we try to place you."
       elsif message.downcase == 'confirm'
         if @offer.available == true
           # find offer, change confirmed to true.
