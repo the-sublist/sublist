@@ -17,41 +17,41 @@ School.create!(
             )
 
 
-Teacher.create!(
-            email: "teacher@test.com",
-            password: "12345678",
-            first_name: "Bradley",
-            last_name: "Johnson",
-            phone_number: "6514913616",
-            age: "29",
-            gender: "Male",
-            credentials: "B.A. Environmental Studies",
-            min_grade: 0,
-            max_grade: 12
-)
+# Teacher.create!(
+#             email: "teacher@test.com",
+#             password: "12345678",
+#             first_name: "Bradley",
+#             last_name: "Johnson",
+#             phone_number: "6514913616",
+#             age: "29",
+#             gender: "Male",
+#             credentials: "B.A. Environmental Studies",
+#             min_grade: 0,
+#             max_grade: 12
+# )
 
-Teacher.create!(
-            email: "casey@test.com",
-            password: "12345678",
-            first_name: "Casey",
-            last_name: "Shultz",
-            phone_number: "6514913616",
-            age: "31",
-            gender: "Female",
-            credentials: "B.A. Badass Studies",
-            min_grade: 0,
-            max_grade: 12
-)
-
-Teacher.create!(
-            email: "bob@test.com",
-            password: "12345678",
-            first_name: "Bob",
-            last_name: "Johnson",
-            phone_number: "6514913616",
-            age: "45",
-            gender: "Male",
-            credentials: "PhD. Obscure German Literature",
-            min_grade: 0,
-            max_grade: 12
-)
+# Teacher.create!(
+#             email: "casey@test.com",
+#             password: "12345678",
+#             first_name: "Casey",
+#             last_name: "Shultz",
+#             phone_number: "6514913616",
+#             age: "31",
+#             gender: "Female",
+#             credentials: "B.A. Badass Studies",
+#             min_grade: 0,
+#             max_grade: 12
+# )
+#
+# Teacher.create!(
+#             email: "bob@test.com",
+#             password: "12345678",
+#             first_name: "Bob",
+#             last_name: "Johnson",
+#             phone_number: "6514913616",
+#             age: "45",
+#             gender: "Male",
+#             credentials: "PhD. Obscure German Literature",
+#             min_grade: 0,
+#             max_grade: 12
+# )
