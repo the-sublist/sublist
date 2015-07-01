@@ -13,5 +13,5 @@ School.create(
             password: "12345678",
             school_name: "Park Valley High School",
             address: "968 Grosvenor Pl, Oakland, CA 94610",
-            contact_phone: "+15555555555"
+            contact_phone: "4155555555"
             )

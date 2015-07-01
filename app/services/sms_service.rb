@@ -9,7 +9,7 @@ class SmsService
   def call
     @client.messages.create(
       from: Rails.application.secrets.twilio_number,
-      to: @teacher.phone_number,
+      to: "+1" + @teacher.phone_number,
       body: "Hello, #{@teacher.full_name}.\n\n"\
       "#{@school.school_name} at #{@school.address} has an opening "\
       "to teach #{@request.format_grade} on #{@request.formatted_datetime}. "\

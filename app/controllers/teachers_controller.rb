@@ -12,11 +12,14 @@ class TeachersController < ApplicationController
   end
 
   def update
-    if @teacher.update(teacher_params)
-      redirect_to teacher_path(@teacher)
-    else
-      render :edit
-    end
+    puts "$" * 40
+    puts params
+    puts "$" * 40
+    # if @teacher.update(teacher_params)
+    #   redirect_to teacher_path(@teacher)
+    # else
+    #   render :edit
+    # end
   end
 
   def destroy

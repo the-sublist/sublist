@@ -22,7 +22,7 @@ class NotificationsController < ApplicationController
       if message.downcase == 'yes'
         @offer.update_attribute(:available, true)
         @offer.save
-        output =  "Great. Sit tight, while we try to place you."
+        output =  "Great. Sit tight, while we reach out to the school."
       elsif message.downcase == 'confirm'
         if @offer.available == true
           # find offer, change confirmed to true.
