@@ -1,5 +1,5 @@
 class ConfirmationService
-  def initialize(teacher, request)
+  def initialize(offer)
     @offer = offer
     @client = Twilio::REST::Client.new Rails.application.secrets.twilio_sid, Rails.application.secrets.twilio_token
   end
