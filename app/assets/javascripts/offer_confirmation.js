@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  // $("input[data-available='false']").prop("disabled", true);
+  $("input[data-available='false']").prop("disabled", true);
 
   $("#offer-button").on("click", function(event) {
     event.preventDefault();
