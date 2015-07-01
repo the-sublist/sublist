@@ -1,6 +1,6 @@
 class NotificationsController < ApplicationController
   def incoming
-    @phone_number = params[:From]
+    @phone_number = params[:From][2..-1]
     @body = params[:Body]
 
     request_id = @body.gsub(/[^0-9]/, "")
