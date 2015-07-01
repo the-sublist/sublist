@@ -23,8 +23,12 @@ class NotificationsController < ApplicationController
         @offer.update_attribute(:available, true)
         @offer.save
         output =  "Great. Sit tight, while we reach out to the school."
+
+
+
+
       elsif message.downcase == 'confirm'
-        if @offer.available == true
+        if @offer.available == true && @offer.confirmation_sent == true
           # find offer, change confirmed to true.
           @offer.update_attribute(:confirmed, true)
           @offer.save
@@ -32,6 +36,9 @@ class NotificationsController < ApplicationController
           @request.update_attribute(:active, false)
           output = "You're all set, if you have any questions call (415) 555-5555."
         end
+
+
+
       else
         output = "We're sorry, there's been an error. Please check your reply and try again."
       end

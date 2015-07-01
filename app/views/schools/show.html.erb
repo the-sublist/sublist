@@ -36,7 +36,7 @@
   <tbody>
     <% @requests.each do |request| %>
       <tr>
-        <td><%= request.request_name %></td>
+        <td><%= link_to "#{request.request_name}", request_path(request) %></td>
         <td><%= request.format_date %></td>
         <td><%= request.format_status %></td>
       </tr>

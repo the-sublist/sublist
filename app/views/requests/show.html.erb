@@ -1,0 +1,30 @@
+<form id="offerForm">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Select</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Education</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @offers.each do |gig| %>
+        <tr>
+          <td><input type="radio" name="offer-position" data-teacher-id="<%= gig.teacher.id %>" data-offer-id="<%= gig.id %>" data-available="<%= gig.available %>"></td>
+          <td><%= gig.teacher.full_name %></td>
+          <td><%= gig.teacher.age %></td>
+          <td><%= gig.teacher.gender %></td>
+          <td><%= gig.teacher.credentials %></td>
+          <td><%= gig.status %></td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+
+  <%= link_to "Offer position", root_path, class: "btn btn-success", id: "offer-button" %>
+</form>

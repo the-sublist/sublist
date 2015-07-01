@@ -14,7 +14,7 @@ class SmsService
       "#{@school.school_name} at #{@school.address} has an opening "\
       "to teach #{@request.format_grade} on #{@request.formatted_datetime}. "\
       "Compensation for this position is #{@request.payment} dollars.\n\n"\
-      "This is request ID:#{@request.id}. "\
+      "This is opening ID:#{@request.id}. "\
       "Please respond 'yes #{@request.id}' to this text if you are available."
     )
   end

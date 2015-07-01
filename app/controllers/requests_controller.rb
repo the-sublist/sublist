@@ -14,11 +14,11 @@ class RequestsController < ApplicationController
       redirect_to school_path(current_school)
     end
   end
-  #
-  # def show
-  #   @offers = Offer.where(request_id: params[:id])
-  # end
-  #
+
+  def show
+    @offers = Offer.where(request_id: params[:id]).includes(:teacher)
+  end
+
   private
     def request_params
       params.require(:request).permit(:request_name, :date, :start_time, :end_time, :payment, :grade, :school_id)
