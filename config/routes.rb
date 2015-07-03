@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :teachers
-  devise_for :schools
+  devise_for :teachers, controllers: {
+      sessions: "teachers/sessions",
+      registrations: "teachers/registrations"
+    }
+
+  devise_for :schools, controllers: {
+      sessions: "schools/sessions",
+      registrations: "schools/registrations"
+    }
+
   root "home#index"
 
   resources :teachers

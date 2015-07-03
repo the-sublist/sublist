@@ -16,14 +16,19 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-// #login {
-//  margin-top: 10%;
-//  box-shadow: 0 0 18px #ccc;
-// }
-//
-// form div {
-//   margin-bottom: 5px;
-// }
+body {
+  padding-top: 70px;
+}
+
+#login {
+  width: 50%;
+  margin: 0 auto;
+  box-shadow: 0 0 18px #ccc;
+}
+
+form div {
+  margin-bottom: 5px;
+}
 
 h4 .btn-group {
   display: inline-block;

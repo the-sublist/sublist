@@ -4,13 +4,13 @@
     <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 
     <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
       <input  id="school_email" autofocus="autofocus" type="email" class="form-control" name="school[email]" placeholder="Email">
     </div>
 
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      <input id="school_password" autocomplete="off" type="password" class="form-control" name="school[password]" placeholder="Password">
+      <input id="school_password" autocomplete="off" type="password" class="form-control" name="school[password]" placeholder="Password (min. 8 characters)">
     </div>
 
     <div class="input-group">
@@ -18,10 +18,27 @@
       <input id="school_password_confirmation" autocomplete="off" type="password" class="form-control" name="school[password_confirmation]" placeholder="Password Confirmation">
     </div>
 
+    <hr>
+
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
+      <input  id="school_name" type="school_name" class="form-control" name="school[school_name]" placeholder="School Name">
+    </div>
+
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
+      <input  id="school_contact_phone" type="contact_phone" class="form-control" name="school[contact_phone]" placeholder="Contact Phone Number">
+    </div>
+
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+      <input  id="school_address" type="address" class="form-control" name="school[address]" placeholder="Address">
+    </div>
+
     <div class="actions">
       <input type="submit" name="commit" value="Sign up" class="btn btn-success">
+      <%= link_to "Log In", new_school_session_path, class: "btn btn-info pull-right" %>
     </div>
   </form>
+<%#= render "devise/shared/links" %>
 </div>
-
-<%= render "devise/shared/links" %>
