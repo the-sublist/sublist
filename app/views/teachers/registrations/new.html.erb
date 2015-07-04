@@ -5,28 +5,26 @@
 
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-      <input  id="teacher_email" autofocus="autofocus" type="email" class="form-control" name="teacher[email]" placeholder="Email">
+      <input  id="teacher_email" autofocus="autofocus" type="email" class="form-control" name="teacher[email]" placeholder="email">
     </div>
 
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      <input id="teacher_password" autocomplete="off" type="password" class="form-control" name="teacher[password]" placeholder="Password">
+      <input id="teacher_password" autocomplete="off" type="password" class="form-control" name="teacher[password]" placeholder="password">
     </div>
 
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      <input id="teacher_password_confirmation" autocomplete="off" type="password" class="form-control" name="teacher[password_confirmation]" placeholder="Password Confirmation">
-    </div>
-
-    <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-      <input  id="teacher_first_name" type="first_name" class="form-control" name="teacher[first_name]" placeholder="First Name">
+      <input id="teacher_password_confirmation" autocomplete="off" type="password" class="form-control" name="teacher[password_confirmation]" placeholder="password confirmation">
     </div>
 
     <div class="actions">
-      <input type="submit" name="commit" value="Sign up" class="btn btn-success">
+      <input type="submit" name="commit" value="Sign up" class="btn btn-primary">
     </div>
   </form>
 </div>
 
-<%#= render "devise/shared/links" %>
+<div class="text-center">
+  <br>
+  <p>already have an account? <%= link_to "login here", new_teacher_session_path %></p>
+</div>

@@ -5,23 +5,28 @@
 
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-      <input autofocus="autofocus" id="teacher_email" type="email" class="form-control" name="teacher[email]" placeholder="Email">
+      <input autofocus="autofocus" id="teacher_email" type="email" class="form-control" name="teacher[email]" placeholder="email">
     </div>
 
     <div class="input-group">
       <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      <input id="teacher_password" autocomplete="off" type="password" class="form-control" name="teacher[password]" placeholder="Password">
+      <input id="teacher_password" autocomplete="off" type="password" class="form-control" name="teacher[password]" placeholder="password">
     </div>
 
       <div class="input-group">
         <input name="teacher[remember_me]" type="hidden" value="0"><input type="checkbox" value="1" name="teacher[remember_me]" id="teacher_remember_me">
-        <label for="teacher_remember_me">Remember me</label>
+        <label for="teacher_remember_me">remember me</label>
       </div>
 
     <div class="actions">
-      <input type="submit" name="commit" value="Log in" class="btn btn-success">
-      <%= link_to "Sign up", new_teacher_registration_path, class: "btn btn-info" %>
+      <input type="submit" name="commit" value="Log in" class="btn btn-primary">
     </div>
 
   </form>
+</div>
+
+<div class="text-center">
+  <br>
+  <p>new user? <%= link_to "create new account", new_teacher_registration_path %></p>
+  <p>forgot your password? <a href="#">click here</a></p>
 </div>

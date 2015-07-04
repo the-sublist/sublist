@@ -11,22 +11,4 @@ class ApplicationController < ActionController::Base
       teacher_path(current_teacher)
     end
   end
-
-  def after_sign_up_path_for(resource)
-    if resource.is_a?(School)
-      root_path
-    elsif resource.is_a?(Teacher)
-      teacher_path(current_teacher)
-    end
-  end
-
-  # private
-  #
-  #   def redirect_id_remembered
-  #     if current_teacher
-  #       redirect_to teacher_path(current_teacher)
-  #     elsif current_school
-  #       redirect_to school_path(current_school)
-  #     end
-  #   end
 end

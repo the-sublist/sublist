@@ -15,9 +15,15 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import url(https://fonts.googleapis.com/css?family=Unica+One);
+ @import url(https://fonts.googleapis.com/css?family=Vollkorn:400,700);
+
+ $header-fonts: "Unica One", Helvetica, Arial, sans-serif;
+ $body-fonts: "Vollkorn", Helvetica, Arial, sans-serif;
 
 body {
   padding-top: 70px;
+  font-family: $body-fonts;
 }
 
 #login {
@@ -67,4 +73,15 @@ h4 .btn-group .btn {
 
 #teacher-portal {
   background: image_url("teacher_desk2.jpg");
+}
+
+.alert {
+  width: 75%;
+  margin: 0px auto 20px;
+}
+
+// BOOTSTRAP OVERRIDE
+label {
+  font-weight: normal;
+  margin-left: 5px;
 }
