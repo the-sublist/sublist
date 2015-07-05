@@ -13,7 +13,7 @@
   </tr>
   <tr>
     <td>Phone:</td>
-    <td><%= "(#{@school.contact_phone[0..2]}) #{@school.contact_phone[3..5]}-#{@school.contact_phone[6..9]}" %></td>
+    <td><%= phone_mask(@school.contact_phone) %></td>
   </tr>
   <tr>
     <td>Address:</td>

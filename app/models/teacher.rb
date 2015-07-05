@@ -10,4 +10,8 @@ class Teacher < ActiveRecord::Base
   def full_name
     "#{self.first_name} #{self.last_name}"
   end
+
+  def credentials
+    "#{self.degree} #{self.area_of_study}"
+  end
 end

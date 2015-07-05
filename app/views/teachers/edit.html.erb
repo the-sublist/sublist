@@ -1,48 +1,115 @@
-<%= form_for @teacher, html: {class: "form-horizontal"} do |f| %>
+<div id="form-standard" class="well well-large">
+  <%= form_for @teacher do |f| %>
+    <div class="text-center">
+      <h4>Edit Profile</h4>
+    </div>
+    <input name="utf8" type="hidden" value="✓">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    <div class="form-group">
+      <span><i class="fa fa-user fa-lg"></i> | Name </span>
+      <%= f.text_field :first_name, class: "form-control group-form-input", placeholder: "First Name" %>
+      <%= f.text_field :last_name, class: "form-control group-form-input", placeholder: "Last Name" %>
+    </div>
+    <div class="form-group">
+      <span><i class="fa fa-phone fa-lg"></i> | Phone #</span>
+      <%= f.telephone_field :phone_number, class: "form-control group-form-input", placeholder: "eg 415-555-5555" %>
+    </div>
+    <div class="form-group">
+      <span><i class="fa fa-graduation-cap "></i> | Min Grade</span>
+      <%= f.select :min_grade, options_for_select([ ["Kindergarten", 0], ["1st Grade", 1], ["2nd Grade", 2],
+                                 ["3rd Grade", 3], ["4th Grade", 4], ["5th Grade", 5],
+                                 ["6th Grade", 6], ["7th Grade", 7], ["8th Grade", 8],
+                                 ["9th Grade", 9], ["10th Grade", 10], ["11th Grade", 11],
+                                 ["12th Grade", 12] ], ["Kindergarten", 0]),
+                                 {}, class: "form-control group-form-input"%>
+    </div>
+    <div class="form-group">
+      <span><i class="fa fa-graduation-cap "></i> | Max Grade</span>
+      <%= f.select :max_grade, options_for_select([ ["Kindergarten", 0], ["1st Grade", 1], ["2nd Grade", 2],
+                                 ["3rd Grade", 3], ["4th Grade", 4], ["5th Grade", 5],
+                                 ["6th Grade", 6], ["7th Grade", 7], ["8th Grade", 8],
+                                 ["9th Grade", 9], ["10th Grade", 10], ["11th Grade", 11],
+                                 ["12th Grade", 12] ], ["12th Grade", 12]),
+                                 {}, class: "form-control group-form-input"%>
+    </div>
+    <div class="form-group">
+      <span><i class="fa fa-circle-thin "></i> | Gender</span>
+      <%= f.select :gender, [ "Male", "Female", "Other"], {prompt: "Select Gender"}, class: "form-control group-form-input" %>
+    </div>
+    <div class="form-group">
+      <span><i class="fa fa-birthday-cake "></i> | Birthday</span>
+      <%= f.date_field :birthday, class: "form-control group-form-input" %>
+    </div>
+    <div class="form-group">
+      <span><i class="fa fa-university"></i> | Education</span>
+      <%= f.select :degree, [ "A.A.", "A.S.", "B.A.", "B.S.", "M.A.", "M.S.", "MFA", "MBA", "PhD"], {prompt: "Select Degree"}, class: "form-control group-form-input"%>
+      <%= f.text_field :area_of_study, class: "form-control group-form-input", placeholder: "Area of Study" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit class: "btn btn-primary btn-sm" %>
+      <%= link_to "Cancel", teacher_path(@teacher), class: "btn btn-default btn-sm" %>
+      <%= link_to "Delete profile", teacher_path(@teacher), method: :delete, class: "btn btn-danger btn-sm pull-right", data: { confirm: "Are you sure?"} %>
+    </div>
+  <% end %>
+</div>
 
-  <div class="form-group">
-    <%= f.label "First Name", class: "col-sm-2" %>
-    <%= f.text_field :first_name, class: "col-sm-6" %>
-  </div>
 
-  <div class="form-group">
-    <%= f.label "Last Name", class: "col-sm-2" %>
-    <%= f.text_field :last_name, class: "col-sm-6" %>
-  </div>
 
-  <div class="form-group">
-    <%= f.label "Phone #", class: "col-sm-2" %>
-    <%= f.telephone_field :phone_number, class: "col-sm-6", placeholder: "eg 415-555-5555" %>
-  </div>
 
-  <div class="form-group">
-    <%= f.label "Min Grade", class: "col-sm-2"  %>
-    <%= f.select :min_grade, [ ["Kindergarten", 0], ["1st Grade", 1], ["2nd Grade", 2], ["3rd Grade", 3], ["4th Grade", 4], ["5th Grade", 5], ["6th Grade", 6], ["7th Grade", 7], ["8th Grade", 8], ["9th Grade", 9], ["10th Grade", 10], ["11th Grade", 11], ["12th Grade", 12] ]%>
-  </div>
 
-  <div class="form-group">
-    <%= f.label "Max Grade", class: "col-sm-2"  %>
-    <%= f.select :max_grade, [ ["Kindergarten", 0], ["1st Grade", 1], ["2nd Grade", 2], ["3rd Grade", 3], ["4th Grade", 4], ["5th Grade", 5], ["6th Grade", 6], ["7th Grade", 7], ["8th Grade", 8], ["9th Grade", 9], ["10th Grade", 10], ["11th Grade", 11], ["12th Grade", 12] ]%>
-  </div>
 
-  <div class="form-group">
-    <%= f.label "Gender", class: "col-sm-2"  %>
-    <%= f.select :gender, [ "Male", "Female", "Other"] %>
-  </div>
 
-  <div class="form-group">
-    <%= f.label "Age", class: "col-sm-2"  %>
-    <%= f.number_field :age %>
-  </div>
 
-  <div class="form-group">
-    <%= f.label "Education", class: "col-sm-2"  %>
-    <%= f.text_field :credentials %>
-  </div>
 
-  <div class="form-group">
-    <%= f.submit class: "btn btn-info col-sm-offset-1" %>
-    <%= link_to "Cancel", teacher_path(@teacher), class: "btn btn-default" %>
-  </div>
 
-<% end %>
+
+<%#= form_for @teacher, html: {class: "form-horizontal"} do |f| %>
+
+  <!-- <div class#="form-group"> -->
+    <%#= f.label "First Name", class: "col-sm-2" %>
+    <%#= f.text_field :first_name, class: "col-sm-6" %>
+  <!-- </div> -->
+
+  <!-- <div class#="form-group"> -->
+    <%#= f.label "Last Name", class: "col-sm-2" %>
+    <%#= f.text_field :last_name, class: "col-sm-6" %>
+  <!-- </div> -->
+
+  <!-- <div class#="form-group"> -->
+    <%#= f.label "Phone #", class: "col-sm-2" %>
+    <%#= f.telephone_field :phone_number, class: "col-sm-6", placeholder: "eg 415-555-5555" %>
+  <!-- </div> -->
+
+  <!-- <div class#="form-group"> -->
+    <%#= f.label "Min Grade", class: "col-sm-2"  %>
+    <%#= f.select :min_grade, [ ["Kindergarten", 0], ["1st Grade", 1], ["2nd Grade", 2], ["3rd Grade", 3], ["4th Grade", 4], ["5th Grade", 5], ["6th Grade", 6], ["7th Grade", 7], ["8th Grade", 8], ["9th Grade", 9], ["10th Grade", 10], ["11th Grade", 11], ["12th Grade", 12] ]%>
+  <!-- </div> -->
+
+  <!-- <div class#="form-group"> -->
+    <%#= f.label "Max Grade", class: "col-sm-2"  %>
+    <%#= f.select :max_grade, [ ["Kindergarten", 0], ["1st Grade", 1], ["2nd Grade", 2], ["3rd Grade", 3], ["4th Grade", 4], ["5th Grade", 5], ["6th Grade", 6], ["7th Grade", 7], ["8th Grade", 8], ["9th Grade", 9], ["10th Grade", 10], ["11th Grade", 11], ["12th Grade", 12] ]%>
+  <!-- </div> -->
+
+  <!-- <div class#="form-group"> -->
+    <%#= f.label "Gender", class: "col-sm-2"  %>
+    <%#= f.select :gender, [ "Male", "Female", "Other"] %>
+  <!-- </div> -->
+
+  <!-- <div class#="form-group"> -->
+    <%#= f.label "Age", class: "col-sm-2"  %>
+    <%#= f.number_field :age %>
+  <!-- </div> -->
+
+  <!-- <div class#="form-group"> -->
+    <%#= f.label "Education", class: "col-sm-2"  %>
+    <%#= f.select :degree, [ "A.A.", "A.S.", "B.A.", "B.S.", "M.A.", "M.S.", "MFA", "MBA", "PhD"] %>
+    <%#= f.text_field :area_of_study %>
+  <!-- </div> -->
+
+  <!-- <div class#="form-group"> -->
+    <%#= f.submit class: "btn btn-primary btn-sm col-sm-offset-1" %>
+    <%#= link_to "Cancel", teacher_path(@teacher), class: "btn btn-default btn-sm" %>
+    <%#= link_to "Delete profile", teacher_path(@teacher), method: :delete, class: "btn btn-danger btn-sm pull-right", data: { confirm: "Are you sure?"} %>
+  <!-- </div> -->
+
+<%# end %>

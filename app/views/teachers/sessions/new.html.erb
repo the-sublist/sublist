@@ -1,4 +1,43 @@
-<div id="login" class="well well-large">
+<div id="form-standard" class="well well-large">
+  <form class="new_teacher" id="new_teacher" action="/teachers/sign_in" accept-charset="UTF-8" method="post">
+    <div class="text-center">
+      <h4>Log In</h4>
+    </div>
+
+    <input name="utf8" type="hidden" value="✓">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+    <div class="form-group">
+      <span><i class="fa fa-envelope"></i> | Email </span>
+      <input autofocus="autofocus" id="teacher_email" type="email" class="form-control group-form-input" name="teacher[email]">
+    </div>
+
+    <div class="form-group">
+      <span><i class="fa fa-envelope"></i> | Password </span>
+      <input id="teacher_password" autocomplete="off" type="password" class="form-control group-form-input" name="teacher[password]">
+    </div>
+
+      <div class="form-group">
+        <input type="submit" name="commit" value="Log in" class="btn btn-primary btn-sm">
+        <input name="teacher[remember_me]" type="hidden" value="0"><input type="checkbox" value="1" name="teacher[remember_me]" id="teacher_remember_me">
+        <label for="teacher_remember_me">Remember me</label>
+      </div>
+
+    <div class="actions">
+    </div>
+
+  </form>
+</div>
+
+<div class="text-center">
+  <br>
+  <p>new user? <%= link_to "create new account", new_teacher_registration_path %></p>
+  <p>forgot your password? <a href="#">click here</a></p>
+</div>
+
+
+
+<!-- <div id="form-standard" class="well well-large">
   <form class="new_teacher" id="new_teacher" action="/teachers/sign_in" accept-charset="UTF-8" method="post">
   <input name="utf8" type="hidden" value="✓">
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
@@ -29,4 +68,4 @@
   <br>
   <p>new user? <%= link_to "create new account", new_teacher_registration_path %></p>
   <p>forgot your password? <a href="#">click here</a></p>
-</div>
+</div> -->

@@ -1,5 +1,5 @@
 class TeachersController < ApplicationController
-  before_action :authenticate_teacher!
+  before_action :authenticate_teacher!, only: [:edit, :update, :destroy, :index]
   before_action :set_teacher, only: [:edit, :update, :destroy, :show]
 
   def index
@@ -30,16 +30,7 @@ class TeachersController < ApplicationController
   private
 
   def teacher_params
-    params.require(:teacher).permit(
-                                    :first_name,
-                                    :last_name,
-                                    :gender,
-                                    :phone_number,
-                                    :credentials,
-                                    :age,
-                                    :min_grade,
-                                    :max_grade
-                                    )
+    params.require(:teacher).permit(:first_name, :last_name, :gender, :phone_number, :degree, :area_of_study, :birthday, :min_grade, :max_grade)
   end
 
   def set_teacher

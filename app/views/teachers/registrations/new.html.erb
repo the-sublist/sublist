@@ -1,21 +1,24 @@
-<div id="login" class="well well-large">
+<div id="form-standard" class="well well-large">
   <form class="new_teacher" id="new_teacher" action="/teachers" accept-charset="UTF-8" method="post">
+    <div class="text-center">
+      <h4>Registration</h4>
+    </div>
     <input name="utf8" type="hidden" value="✓">
     <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 
-    <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-      <input  id="teacher_email" autofocus="autofocus" type="email" class="form-control" name="teacher[email]" placeholder="email">
+    <div class="form-group">
+      <span><i class="fa fa-envelope"></i> | Email </span>
+      <input  id="teacher_email" autofocus="autofocus" type="email" class="form-control group-form-input" name="teacher[email]" >
     </div>
 
-    <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      <input id="teacher_password" autocomplete="off" type="password" class="form-control" name="teacher[password]" placeholder="password">
+    <div class="form-group">
+      <span><i class="fa fa-envelope"></i> | Password (8 chars minimum)</span>
+      <input id="teacher_password" autocomplete="off" type="password" class="form-control group-form-input" name="teacher[password]">
     </div>
 
-    <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      <input id="teacher_password_confirmation" autocomplete="off" type="password" class="form-control" name="teacher[password_confirmation]" placeholder="password confirmation">
+    <div class="form-group">
+      <span><i class="fa fa-envelope"></i> | Password Confirmation</span>
+      <input id="teacher_password_confirmation" autocomplete="off" type="password" class="form-control group-form-input" name="teacher[password_confirmation]">
     </div>
 
     <div class="actions">
