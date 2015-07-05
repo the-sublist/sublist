@@ -85,7 +85,7 @@ label {
   margin-top: 5px;
 }
 
-#form-standard {
+.form-standard {
   width: 50%;
   margin: 0 auto;
   box-shadow: 0 0 18px #ccc;
@@ -100,11 +100,23 @@ form div {
   border-bottom: 1px solid rgba(51, 51, 51, .4);
 }
 
-#remember_me {
+.remember_me {
   margin-left: 30px;
 }
 
 #request-form-wrapper {
   width: 40%;
   margin: 0 auto;
+}
+
+.form-group .unhappyMessage {
+  border: 0;
+  font-weight: 100;
+  margin-top: 5px;
+  padding-left: 5px;
+  background: rgba(172,41,37, .6);
+  color: white;
+}
+
+.unhappy {
 }
