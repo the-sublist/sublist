@@ -1,4 +1,4 @@
-class SmsService
+class NotificationService
   def initialize(teacher, request, school)
     @teacher = teacher
     @request = request
@@ -18,4 +18,5 @@ class SmsService
       "Please respond 'yes #{@request.id}' to this text if you are available."
     )
   end
+
 end

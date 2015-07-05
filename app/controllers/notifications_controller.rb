@@ -21,24 +21,14 @@ class NotificationsController < ApplicationController
   def process_message(message)
       if message.downcase == 'yes'
         @offer.update_attribute(:available, true)
-        @offer.save
         output =  "Great. Sit tight, while we reach out to the school."
-
-
-
-
       elsif message.downcase == 'confirm'
         if @offer.available == true && @offer.confirmation_sent == true
-          # find offer, change confirmed to true.
           @offer.update_attribute(:confirmed, true)
-          @offer.save
-          # Find request set to filled
           @request.update_attribute(:active, false)
           output = "You're all set, if you have any questions call (415) 555-5555."
+          CancellationService.new(@request).call
         end
-
-
-
       else
         output = "We're sorry, there's been an error. Please check your reply and try again."
       end

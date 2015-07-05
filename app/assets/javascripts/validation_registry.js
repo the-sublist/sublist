@@ -115,8 +115,7 @@ $(document).ready(function() {
       },
       '#request_date': {
         required: true,
-        message: "WHAT",
-        test: happy.validateDate
+        message: standardMessage,
       },
       '#request_start_time': {
         required: true,

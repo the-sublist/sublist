@@ -8,7 +8,7 @@ class OfferService
   def call
     @teachers.each do |teacher|
       Offer.create!(teacher_id: teacher.id, request_id: @request.id)
-      SmsService.new(teacher, @request, @school).call
+      NotificationService.new(teacher, @request, @school).call
     end
   end
 end

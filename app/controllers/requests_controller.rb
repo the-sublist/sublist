@@ -7,7 +7,6 @@ class RequestsController < ApplicationController
 
   def create
     @request = Request.new(request_params)
-
     if @request.save
       teachers = Teacher.where("min_grade <= ? AND max_grade >= ?", request_params[:grade], request_params[:grade])
       OfferService.new(teachers, @request, current_school).call
