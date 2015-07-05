@@ -44,8 +44,7 @@ before_filter :configure_sign_up_params, only: [:create]
   # end
   def configure_sign_up_params
     devise_parameter_sanitizer.for(:sign_up) do |u|
-      u.permit(:email, :password, :password_confirmation, :first_name,
-      :last_name, :phone_number, :age, :credentials, :min_grade, :max_grade)
+      u.permit(:email, :password, :password_confirmation, :first_name, :last_name, :phone_number)
     end
   end
 
