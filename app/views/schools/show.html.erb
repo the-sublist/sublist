@@ -1,28 +1,6 @@
-<h4>Your Profile
-  <div class="btn-group pull-right">
-    <%= link_to "Complete/edit profile", edit_school_path, class: "btn btn-info btn-sm" %>
-    <%= link_to "Delete profile", school_path(@school), method: :delete, class: "btn btn-danger btn-sm", data: { confirm: "Are you sure?"} %>
-  </div>
-
-</h4>
-
-<table class="table">
-  <tr>
-    <td>Name:</td>
-    <td><%= @school.school_name %></td>
-  </tr>
-  <tr>
-    <td>Phone:</td>
-    <td><%= phone_mask(@school.contact_phone) %></td>
-  </tr>
-  <tr>
-    <td>Address:</td>
-    <td><%= @school.address %></td>
-  </tr>
-</table>
-
-
-<h4>Recent Requests</h4>
+<div class="text-center">
+  <h4>Recent Requests</h4>
+</div>
 
 <table class="table">
   <thead>

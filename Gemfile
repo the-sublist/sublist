@@ -11,7 +11,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rest-client', '~> 1.7.3'
 gem 'twilio-ruby'
-gem 'faker'
 
 gem 'devise'
 # gem 'cancancan'

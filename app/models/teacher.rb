@@ -14,4 +14,8 @@ class Teacher < ActiveRecord::Base
   def credentials
     "#{self.degree} #{self.area_of_study}"
   end
+
+  def age
+    (Date.today - self.birthday).to_i / 365
+  end
 end
