@@ -1,25 +1,29 @@
 <div id="form-standard" class="well well-large ">
   <form class="new_school" id="new_school" action="/schools/sign_in" accept-charset="UTF-8" method="post">
-  <input name="utf8" type="hidden" value="✓">
-  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-
-    <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-      <input autofocus="autofocus" id="school_email" type="email" class="form-control" name="school[email]" placeholder="email">
+    <div class="text-center">
+      <h4>Log In</h4>
     </div>
 
-    <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      <input id="school_password" autocomplete="off" type="password" class="form-control" name="school[password]" placeholder="password">
+    <input name="utf8" type="hidden" value="✓">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+    <div class="form-group">
+      <span><i class="fa fa-envelope"></i> | Email </span>
+      <input autofocus="autofocus" id="school_email" type="email" class="form-control group-form-input" name="school[email]">
     </div>
 
-      <div class="input-group">
-        <input name="school[remember_me]" type="hidden" value="0"><input type="checkbox" value="1" name="school[remember_me]" id="school_remember_me">
+    <div class="form-group">
+      <span><i class="fa fa-lock"></i> | Password </span>
+      <input id="school_password" autocomplete="off" type="password" class="form-control group-form-input" name="school[password]" placeholder="password">
+    </div>
+
+      <div class="form-group">
+        <input type="submit" name="commit" value="Log in" class="btn btn-primary btn-sm">
+        <input name="school[remember_me]" type="hidden" value="0"><input type="checkbox" value="1" name="school[remember_me]" id="remember_me">
         <label for="school_remember_me">remember me</label>
       </div>
 
     <div class="actions">
-        <input type="submit" name="commit" value="Log in" class="btn btn-primary" id="tester">
     </div>
 
   </form>

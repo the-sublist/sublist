@@ -1,40 +1,44 @@
-<div id="form-standard" class="col-md-4 col-md-offset-4 well well-large ">
+<div id="form-standard" class="well well-large ">
   <form class="new_school" id="new_school" action="/schools" accept-charset="UTF-8" method="post">
+    <div class="text-center">
+      <h4>Registration</h4>
+    </div>
+
     <input name="utf8" type="hidden" value="✓">
     <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 
-    <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-      <input  id="school_email" autofocus="autofocus" type="email" class="form-control" name="school[email]" placeholder="email">
+    <div class="form-group">
+      <span><i class="fa fa-envelope"></i> | Email </span>
+      <input  id="school_email" autofocus="autofocus" type="email" class="form-control" name="school[email]">
     </div>
 
-    <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      <input id="school_password" autocomplete="off" type="password" class="form-control" name="school[password]" placeholder="password (min. 8 characters)">
+    <div class="form-group">
+      <span><i class="fa fa-lock"></i> | Password (8 chars minimum)</span>
+      <input id="school_password" autocomplete="off" type="password" class="form-control" name="school[password]">
     </div>
 
-    <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-      <input id="school_password_confirmation" autocomplete="off" type="password" class="form-control" name="school[password_confirmation]" placeholder="password confirmation">
+    <div class="form-group">
+      <span><i class="fa fa-lock"></i> | Password Confirmation</span>
+      <input id="school_password_confirmation" autocomplete="off" type="password" class="form-control" name="school[password_confirmation]">
     </div>
 
-    <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-education"></i></span>
-      <input  id="school_name" type="school_name" class="form-control" name="school[school_name]" placeholder="school name">
+    <div class="form-group">
+      <span><i class="fa fa-university"></i> | School Name </span>
+      <input  id="school_name" type="school_name" class="form-control" name="school[school_name]">
     </div>
 
-    <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-      <input  id="school_contact_phone" type="tel" class="form-control" name="school[contact_phone]" placeholder="contact phone #">
+    <div class="form-group">
+      <span><i class="fa fa-phone"></i> | Phone Number </span>
+      <input  id="school_contact_phone" type="tel" class="form-control" name="school[contact_phone]">
     </div>
 
-    <div class="input-group">
-      <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-      <input  id="school_address" type="address" class="form-control" name="school[address]" placeholder="address">
+    <div class="form-group">
+      <span><i class="fa fa-globe"></i> | Address </span>
+      <input  id="school_address" type="address" class="form-control" name="school[address]">
     </div>
 
     <div class="actions">
-      <input type="submit" name="commit" value="Sign up" class="btn btn-primary">
+      <input type="submit" name="commit" value="Sign up" class="btn btn-primary btn-sm">
     </div>
   </form>
 </div>

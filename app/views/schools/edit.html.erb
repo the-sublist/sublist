@@ -1,23 +1,31 @@
-<%= form_for @school, html: {class: "form-horizontal"} do |f| %>
-
-  <div class="form-group">
-    <%= f.label "School Name", class: "col-sm-2" %>
-    <%= f.text_field :school_name, class: "col-sm-6" %>
+<div id="form-standard" class="well well-large">
+  <%= form_for @school do |f| %>
+  <div class="text-center">
+    <h4>Edit Profile</h4>
   </div>
+  <input name="utf8" type="hidden" value="✓">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 
-  <div class="form-group">
-    <%= f.label "Address", class: "col-sm-2" %>
-    <%= f.text_field :address, class: "col-sm-6" %>
-  </div>
+    <div class="form-group">
+      <span><i class="fa fa-university"></i> | School Name</span>
+      <%= f.text_field :school_name, class: "form-control group-form-input" %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label "Phone #", class: "col-sm-2" %>
-    <%= f.text_field :contact_phone, class: "col-sm-6", placeholder: "eg 415-555-5555" %>
-  </div>
+    <div class="form-group">
+      <span><i class="fa fa-globe"></i> | School Name</span>
+      <%= f.text_field :address, class: "form-control group-form-input" %>
+    </div>
 
-  <div class="form-group">
-    <%= f.submit class: "btn btn-info col-sm-offset-1" %>
-    <%= link_to "Cancel", school_path(@school), class: "btn btn-default" %>
-  </div>
+    <div class="form-group">
+      <span><i class="fa fa-phone"></i> | Phone Number</span>
+      <%= f.text_field :contact_phone, class: "form-control group-form-input", placeholder: "eg 415-555-5555" %>
+    </div>
 
-<% end %>
+    <div class="form-group">
+      <%= f.submit class: "btn btn-primary btn-sm" %>
+      <%= link_to "Cancel", school_path(@school), class: "btn btn-default btn-sm" %>
+      <%= link_to "Delete profile", school_path(@school), method: :delete, class: "btn btn-danger btn-sm pull-right", data: { confirm: "Are you sure?"} %>
+    </div>
+
+  <% end %>
+</div>
