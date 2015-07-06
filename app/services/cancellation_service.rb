@@ -10,7 +10,7 @@ class CancellationService
       @client.messages.create(
         from: Rails.application.secrets.twilio_number,
         to: "+1" + offer.teacher.phone_number,
-        body: "Opening ID:#{@request.id} has been filled or cancelled."\
+        body: "Opening ID:#{@request.id} has been filled or cancelled. "\
         "We will let you know as more openings become available."
       )
     end
