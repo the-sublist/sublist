@@ -1,3 +1,4 @@
+<h4>Currently Available Teachers</h4>
 <form id="offerForm">
   <table class="table table-striped">
     <thead>
@@ -13,8 +14,12 @@
 
     <tbody>
       <% @offers.each do |gig| %>
+        <% break if gig.available != true %>
         <tr>
-          <td><input type="radio" name="offer-position" data-teacher-id="<%= gig.teacher.id %>" data-offer-id="<%= gig.id %>" data-available="<%= gig.available %>"></td>
+          <td>
+            <input type="radio" name="offer-position" data-teacher-id="<%= gig.teacher.id %>"
+                    data-offer-id="<%= gig.id %>" data-available="<%= gig.available %>" data-confirmation-sent="<%= gig.confirmation_sent %>">
+            </td>
           <td><%= gig.teacher.full_name %></td>
           <td><%= gig.teacher.age %></td>
           <td><%= gig.teacher.gender %></td>
@@ -28,3 +33,30 @@
 
   <div class="btn btn-primary btn-sm" id="offer-button">Offer Position</div>
 </form>
+
+<br><br><br>
+<h4>All Teachers</h4>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Education</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @offers.each do |gig| %>
+      <tr>
+        <td><%= gig.teacher.full_name %></td>
+        <td><%= gig.teacher.age %></td>
+        <td><%= gig.teacher.gender %></td>
+        <td><%= gig.teacher.credentials %></td>
+        <td><%= gig.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>

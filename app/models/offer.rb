@@ -11,6 +11,8 @@ class Offer < ActiveRecord::Base
     if self.confirmed == true
       "Teacher Confirmed"
     elsif self.available == false
+      "Teacher Unavailable"
+    elsif self.available == nil
       "Awaiting Response"
     elsif self.available == true
       "Teacher Available"

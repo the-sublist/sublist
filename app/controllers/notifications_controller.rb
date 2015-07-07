@@ -19,16 +19,28 @@ class NotificationsController < ApplicationController
   private
 
   def process_message(message)
-      if message.downcase == 'yes'
+      if message.downcase == 'no'
+        @offer.update_attribute(:available, false)
+        output =  "You have been unsubscribed from this opening."
+
+      elsif message.downcase == 'yes'
         @offer.update_attribute(:available, true)
         output =  "Great. Sit tight, while we reach out to the school."
-      elsif message.downcase == 'confirm'
-        if @offer.available == true && @offer.confirmation_sent == true
-          @offer.update_attribute(:confirmed, true)
-          @request.update_attribute(:active, false)
-          output = "You're all set, if you have any questions call (415) 555-5555."
-          CancellationService.new(@request).call
-        end
+
+
+
+
+
+      elsif message.downcase == 'confirm' && @offer.confirmation_sent == true
+        @offer.update_attribute(:confirmed, true)
+        @request.update_attribute(:active, false)
+        output = "You're all set, if you have any questions call (415) 555-5555."
+        CancellationService.new(@request).call
+
+
+
+
+
       else
         output = "We're sorry, there's been an error. Please check your reply and try again."
       end
