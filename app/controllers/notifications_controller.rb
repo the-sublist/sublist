@@ -22,7 +22,6 @@ class NotificationsController < ApplicationController
       if message.downcase == 'no'
         @offer.update_attribute(:available, false)
         output =  "You have been unsubscribed from this opening."
-
       elsif message.downcase == 'yes'
         @offer.update_attribute(:available, true)
         output =  "Great. Sit tight, while we reach out to the school."
@@ -31,7 +30,7 @@ class NotificationsController < ApplicationController
 
 
 
-      elsif message.downcase == 'confirm' && @offer.confirmation_sent == true
+      elsif message.downcase == 'confirm' && @offer.confirmation_sent == true && @request.active == true
         @offer.update_attribute(:confirmed, true)
         @request.update_attribute(:active, false)
         output = "You're all set, if you have any questions call (415) 555-5555."
