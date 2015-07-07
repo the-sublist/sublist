@@ -14,18 +14,19 @@
 
     <tbody>
       <% @offers.each do |gig| %>
-        <% break if gig.available != true %>
-        <tr>
-          <td>
-            <input type="radio" name="offer-position" data-teacher-id="<%= gig.teacher.id %>"
-                    data-offer-id="<%= gig.id %>" data-available="<%= gig.available %>" data-confirmation-sent="<%= gig.confirmation_sent %>">
-            </td>
-          <td><%= gig.teacher.full_name %></td>
-          <td><%= gig.teacher.age %></td>
-          <td><%= gig.teacher.gender %></td>
-          <td><%= gig.teacher.credentials %></td>
-          <td><%= gig.status %></td>
-        </tr>
+        <% if gig.available = true %>
+          <tr>
+            <td>
+              <input type="radio" name="offer-position" data-teacher-id="<%= gig.teacher.id %>"
+                      data-offer-id="<%= gig.id %>" data-available="<%= gig.available %>" data-confirmation-sent="<%= gig.confirmation_sent %>">
+              </td>
+            <td><%= gig.teacher.full_name %></td>
+            <td><%= gig.teacher.age %></td>
+            <td><%= gig.teacher.gender %></td>
+            <td><%= gig.teacher.credentials %></td>
+            <td><%= gig.status %></td>
+          </tr>
+        <% end %>
       <% end %>
     </tbody>
 
