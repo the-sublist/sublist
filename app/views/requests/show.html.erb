@@ -14,7 +14,7 @@
 
     <tbody>
       <% @offers.each do |gig| %>
-        <% if gig.available = true %>
+        <% if gig.available == true %>
           <tr>
             <td>
               <input type="radio" name="offer-position" data-teacher-id="<%= gig.teacher.id %>"
