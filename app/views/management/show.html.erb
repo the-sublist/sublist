@@ -1,0 +1,10 @@
+<h4>Destroy Teachers</h4>
+<hr>
+<form class="" action="/manage" accept-charset="UTF-8" method="post">
+  <input name="utf8" type="hidden" value="✓">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <table class="table table-striped">
+  <%= collection_select(:teacher, :id, Teacher.all, :id, :first_name) %>
+
+  <input style="margin-left: 15px;" type="submit" name="commit" value="Destroy Teacher" class="btn btn-danger btn-sm">
+</form>

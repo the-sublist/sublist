@@ -15,9 +15,13 @@ Rails.application.routes.draw do
   resources :schools
   resources :requests
 
-
   get 'incoming/' => 'notifications#incoming'
   post 'offers' => 'offers#send_confirmation'
+
+
+  # ROUTE FOR DEMO MANAGEMENT
+  get "manage" => 'management#show'
+  post "manage" => "management#destroy"
   # get "/school" => "schools#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
