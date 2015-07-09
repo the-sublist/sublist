@@ -111,23 +111,40 @@ $(document).ready(function() {
       },
       '#request_payment': {
         required: true,
-        message: standardMessage
+        message: "Please indicate payment in dollars"
       },
       '#request_date': {
         required: true,
-        message: standardMessage,
+        message: "Please select a date, today or in the future",
+        test: happy.dateCheck,
+        arg: function() {
+          var year = new Date().getFullYear().toString();
+          var month = ("0" + (new Date().getMonth() + 1).toString()).slice(-2);
+          var date = ("0" + new Date().getDate().toString()).slice(-2);
+          return year + "-" + month + "-" + date
+        }
       },
       '#request_start_time': {
         required: true,
-        message: standardMessage
+        message: "Start time must be earlier than end time",
+        when: "submit",
+        test: happy.amTimecheck,
+        arg: function() {
+          return $("#request_end_time").val();
+        }
       },
       '#request_end_time': {
         required: true,
-        message: standardMessage
+        message: "End time must be later than start time",
+        when: "submit",
+        test: happy.pmTimecheck,
+        arg: function() {
+          return $("#request_start_time").val();
+        }
       },
       '#request_grade': {
         required: true,
-        message: standardMessage
+        message: "Please select a grade for this opening"
       },
     }
   });
