@@ -6,15 +6,11 @@ gem 'bootstrap-sass', '~> 3.3.5'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
-# gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rest-client', '~> 1.7.3'
 gem 'twilio-ruby'
-
 gem 'devise'
-# gem 'cancancan'
-# gem 'rolify'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -28,10 +24,7 @@ group :development, :test do
   gem 'pry'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  # gem 'jasmine-rails'
-  # gem 'rspec-rails'
-  # gem 'capybara'
-  # gem 'launchy'
+  gem 'dotenv-rails'
 end
 
 group :production do
